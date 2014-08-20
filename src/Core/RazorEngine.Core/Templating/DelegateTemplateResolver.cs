@@ -35,6 +35,17 @@
         {
             return _resolver(name);
         }
+
+        public void AddProfile<T>() where T : RazorProfile, new()
+        {
+            AddProfile(new T());
+        }
+
+        public void AddProfile(RazorProfile profile)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

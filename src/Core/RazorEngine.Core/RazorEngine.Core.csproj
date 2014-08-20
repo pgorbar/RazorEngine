@@ -45,7 +45,8 @@
     <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
     <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
     <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
-    <DocumentationFile>bin\Debug\RazorEngine.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>false</Prefer32Bit>
@@ -61,10 +62,11 @@
     <DocumentationFile>bin\Release\RazorEngine.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>RazorEngine.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -77,9 +79,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Shared\SharedAssemblyInfo.cs">
-      <Link>Properties\SharedAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="AttributeValue.cs" />
     <Compile Include="CodeGenerators\SetModelTypeCodeGenerator.cs" />
     <Compile Include="Compilation\CompilerServiceBase.cs" />
@@ -113,13 +112,19 @@
     <Compile Include="Configuration\Xml\TemplateServiceConfigurationElement.cs" />
     <Compile Include="Configuration\Xml\TemplateServiceConfigurationElementCollection.cs" />
     <Compile Include="Configuration\Xml\XmlTemplateServiceConfiguration.cs" />
+    <Compile Include="Custom\IRazorService.cs" />
+    <Compile Include="Custom\RazorConfiguration.cs" />
+    <Compile Include="Custom\RazorTemplate.cs" />
+    <Compile Include="Custom\Razor.cs" />
+    <Compile Include="Custom\RazorService.cs" />
+    <Compile Include="Custom\RazorProfile.cs" />
+    <Compile Include="Custom\ResourceStreamTemplateResolver.cs" />
     <Compile Include="Encoding.cs" />
     <Compile Include="Common\GlobalSuppressions.cs" />
     <Compile Include="Common\HashCodeCombiner.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PositionTagged.cs" />
-    <Compile Include="Razor.cs" />
     <Compile Include="Templating\CachedTemplateItem.cs" />
     <Compile Include="Templating\HtmlTemplateBaseOfT.cs" />
     <Compile Include="Templating\DefaultActivator.cs" />
@@ -156,14 +161,13 @@
     <Compile Include="Text\RawStringFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
-    <None Include="RazorEngine.snk" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)RazorEngine.*" "$(SolutionDir)..\nuget\lib\net45" /y</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

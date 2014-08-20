@@ -174,19 +174,6 @@
             Assert.That(config.EncodedStringFactory is RawStringFactory);
         }
 
-        /// <summary>
-        /// Tests that the fluent configuration supports setting a custom activator delegate.
-        /// </summary>
-        [Test]
-        public void FluentTemplateServiceConfigutation_CanSetActivator_UsingDelegate()
-        {
-            Func<InstanceContext, ITemplate> activator = i => null;
-
-            var config = new FluentTemplateServiceConfiguration(c => c.ActivateUsing(activator));
-            var delegateActivator = (DelegateActivator)config.Activator;
-
-            Assert.That(delegateActivator.Activator == activator);
-        }
         #endregion
     }
 }
